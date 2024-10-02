@@ -1,0 +1,66 @@
+body{
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo{
+    width: 120px;
+    height: 120px;
+}
+address{
+    margin: 10px;
+    font-style: normal;
+}
+.container-header{
+    display: flex;
+    justify-content: space-between;
+}
+.inner-container-header{
+    display: flex;
+}
+/* .header-item{
+    border: solid red 1px;
+} */
+.container-bill-to{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+.bill-to-item{
+    flex-basis: 35%;
+}
+.bill-to-item-grow{
+    flex-grow: 1;
+}
+table{
+    width: 100%;
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+td,th{
+    border: solid black 1px;
+    padding: 5px;
+    text-align: center;
+}
+.container-billable{
+    display: flex;
+    justify-content: space-between;
+}
+/* .billable.item{
+    border: solid red 1px;
+} */
+.container-payment-summary{
+    display: flex;
+    justify-content: space-between;
+}
+/* .payment-summary-item{
+    border: solid red 1px;
+} */
+.footer{
+      position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        text-align: right;
+        margin: 5px;
+}
