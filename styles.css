@@ -1,7 +1,12 @@
 body{
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 90vh;
+}
+.container{
+    display: flex;
+    flex-direction: column;
 }
 .logo{
     width: 120px;
@@ -10,18 +15,12 @@ body{
 address{
     margin: 10px;
     font-style: normal;
+    margin-bottom: 20px;
 }
 .container-header{
     display: flex;
     justify-content: space-between;
 }
-.inner-container-header{
-    display: flex;
-    align-items: center;
-}
-/* .header-item{
-    border: solid red 1px;
-} */
 .container-bill-to{
     display: flex;
     justify-content: stretch;
@@ -29,42 +28,64 @@ address{
     margin-top: 30px;
 }
 .bill-to-item{
-    flex-basis: 35%;
+    flex-basis: 40%;
 }
 .bill-to-item-grow{
     flex-grow: 1;
 }
-table{
+table.summary{
     width: 100%;
     border: solid black 1px;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
-td,th{
+table.summary td, 
+table.summary th{
     border: solid black 1px;
     padding: 0px;
     text-align: center;
 }
-.container-billable{
-    display: flex;
-    justify-content: space-between;
+
+table.qty{
+    border-collapse: collapse;
+    width: 100%;
 }
-.billable.item{
-    border: solid red 1px;
+
+table.qty td, 
+table.qty th{
+    border: none;
 }
+table.qty td:last-child,
+table.qty th:last-child{
+    text-align: right;
+}
+table.qty td:first-child,
+table.qty th:first-child, 
+table.qty td:nth-child(2), 
+table.qty th:nth-child(2){
+    text-align: left;
+}
+table.qty {
+    text-align: center;
+}
+
 .container-payment-summary{
     display: flex;
-    justify-content: space-between;
+    margin-top:20px;
 }
-.payment-summary-item{
+.payment-summary-item-left{
     flex:1 1 300px;
 }
-.payment-summary-item-shrink{
+.payment-summary-item-right{
+    font-weight: 700;
     flex:0 0 150px;
+    text-align: right;
 }
 footer{
-    position: fixed;
-    text-align: right;
-    right: 0;
-    bottom: 0;
+    flex-grow: 1;
+    align-self: flex-end; 
+    /*with follow styles it become a flex container itself */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
