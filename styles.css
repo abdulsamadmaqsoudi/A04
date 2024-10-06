@@ -2,11 +2,24 @@ body{
     width: 80%;
     margin: 10px auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 90vh;
+    height: 98vh;
 }
 .container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr 15%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "logo co-address invoice-number invoice-number"
+        "bill-to bill-to summary summary"
+        "qty qty qty qty"
+        "pay pay pay total"
+        ". . footer footer";
+}
+.logo-area{
+    grid-area: logo;
+}
+.company-address{
+    grid-area: co-address;
 }
 .logo{
     width: 120px;
@@ -17,22 +30,17 @@ address{
     font-style: normal;
     margin-bottom: 20px;
 }
-.container-header{
-    display: flex;
-    justify-content: space-between;
+.header-invoice-number{
+    grid-area: invoice-number;
 }
+
 .container-bill-to{
-    display: flex;
-    justify-content: stretch;
-    align-items: center;
-    margin-top: 30px;
+    grid-area: bill-to;
 }
-.bill-to-item{
-    flex-basis: 40%;
+.bill-sammary{
+   grid-area: summary;
 }
-.bill-to-item-grow{
-    flex-grow: 1;
-}
+
 table.summary{
     width: 100%;
     border: solid black 1px;
@@ -68,24 +76,16 @@ table.qty th:nth-child(2){
 table.qty {
     text-align: center;
 }
+.qty-section{
+    grid-area: qty;
+}
+.payment-instruction{
+    grid-area: pay;
+}
+.payment-total{
+    grid-area: total;
+}
 
-.container-payment-summary{
-    display: flex;
-    margin-top:20px;
-}
-.payment-summary-item-left{
-    flex:1 1 300px;
-}
-.payment-summary-item-right{
-    font-weight: 700;
-    flex:0 0 150px;
-    text-align: right;
-}
 footer{
-    flex-grow: 1;
-    align-self: flex-end; 
-    /*with follow styles it become a flex container itself */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    grid-area: footer;
 }
