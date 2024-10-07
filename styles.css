@@ -1,91 +1,110 @@
-body{
+body {
     width: 80%;
     margin: 10px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, sans-serif;
     height: 98vh;
 }
-.container{
-    display: flex;
-    flex-direction: column;
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr; 
 }
-.logo{
+
+.container-header {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    display: grid; 
+    grid-template-columns: 25% 80%;
+}
+
+.header-item{
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    right: 0; 
+    margin: 5px
+}
+
+.logo {
     width: 120px;
     height: 120px;
 }
-address{
+
+address {
     margin: 10px;
     font-style: normal;
     margin-bottom: 20px;
 }
-.container-header{
-    display: flex;
-    justify-content: space-between;
-}
-.container-bill-to{
-    display: flex;
-    justify-content: stretch;
-    align-items: center;
+
+.container-bill-to {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
     margin-top: 30px;
 }
-.bill-to-item{
-    flex-basis: 40%;
-}
-.bill-to-item-grow{
-    flex-grow: 1;
-}
-table.summary{
+
+table.summary {
     width: 100%;
     border: solid black 1px;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
+
 table.summary td, 
-table.summary th{
+table.summary th {
     border: solid black 1px;
     padding: 0px;
     text-align: center;
 }
 
-table.qty{
+table.qty {
     border-collapse: collapse;
     width: 100%;
 }
 
 table.qty td, 
-table.qty th{
+table.qty th {
     border: none;
 }
+
 table.qty td:last-child,
-table.qty th:last-child{
+table.qty th:last-child {
     text-align: right;
 }
+
 table.qty td:first-child,
 table.qty th:first-child, 
 table.qty td:nth-child(2), 
-table.qty th:nth-child(2){
+table.qty th:nth-child(2) {
     text-align: left;
 }
+
 table.qty {
     text-align: center;
 }
 
-.container-payment-summary{
-    display: flex;
-    margin-top:20px;
+.container-payment {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    margin-top: 20px;
 }
-.payment-summary-item-left{
-    flex:1 1 300px;
+
+.payment-instruction {
+    text-align: left;
 }
-.payment-summary-item-right{
+
+.payment-total {
     font-weight: 700;
-    flex:0 0 150px;
     text-align: right;
 }
-footer{
-    flex-grow: 1;
-    align-self: flex-end; 
-    /*with follow styles it become a flex container itself */
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+
+footer {
+    grid-column: 1 / -1; 
+    text-align: right; 
 }
