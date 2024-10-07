@@ -32,6 +32,7 @@ address{
 }
 .header-invoice-number{
     grid-area: invoice-number;
+    text-align: right;
 }
 
 .container-bill-to{
@@ -84,8 +85,19 @@ table.qty {
 }
 .payment-total{
     grid-area: total;
+    text-align: right;
+    font-weight: 700;
 }
 
 footer{
     grid-area: footer;
+    position: relative;
+    width: 100%; 
+    height: 100%; 
+}
+.footer-text{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
 }
